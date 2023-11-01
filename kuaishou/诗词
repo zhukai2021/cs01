@@ -1,0 +1,19 @@
+# coding:utf-8
+import requests
+from lxml.html import tostring
+import re
+from lxml import etree
+str0=""
+list0=[]
+url='https://www.gswen.com.cn/ancient/0/0/0/0/0/1/'
+headers = {
+'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36 Edg/96.0.1054.53'}
+r = requests.get(url, headers=headers)
+r.encoding = 'utf-8'
+r2 = etree.HTML(r.text)
+#print(r.text)
+#print(r2)
+r5 = r2.xpath("//*[contains(@id,'viewbox')]/h1")
+print(r5)
+
+

@@ -1,0 +1,29 @@
+import requests
+from lxml.html import tostring
+import re
+from lxml import etree
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36 Edg/96.0.1054.53'}
+
+r = requests.get('https://aweme.snssdk.com/aweme/v1/play/?video_id=v0d00fg10000c9oedirc77uae84crc00&ratio=720p&line=0',
+                 headers=headers)
+print(r)
+try:
+    with open('./a/' + 'a1' + '.mp4', 'wb') as f:
+        f.write(r.content)
+except IOError:
+    print("Error: 没有找到文件或读取文件失败")
+
+else:
+    print("内容写入文件成功")
+import csv
+
+with open('csv/cs3.csv', mode='a', encoding='utf-8', newline='') as f:
+    fieldnames = ('11', '12', '13', '14', '15', '16', '17')
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+with open('csv/cs3.csv', 'a', encoding='utf-8', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writerow({'11': '啊', '12': '啊啊'})
+    

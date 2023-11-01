@@ -1,0 +1,144 @@
+auto.waitFor();
+console.show()
+x = device.width
+y = device.height
+if (x == 0) {
+    x = 721
+    y = 1281
+}
+toastLog('2022070401');
+toastLog(x);
+toastLog(y);
+
+wj = open("/sdcard/a711.txt");
+du = wj.read()
+wj.close();
+
+r1 = du.split(/[0-9]{1,3},/)
+
+
+//pxx()
+
+for (i = 4; i <= 55; i++) {//3kaishi
+    print(r1[i+1])
+    cx()
+    pxx()
+    cx2()
+
+}
+
+function cx2() {
+    launchApp('CX文件管理器')
+    sleep(4001)
+    toastLog(textContains("/a02").findOne(4000).parent().click())
+    sleep(4001)
+    toastLog(id("com.cxinventor.file.explorer:id/filename").findOne(4000).parent().longClick())
+    sleep(4001)
+    toastLog(text("删除").findOne(4000).parent().click())
+    sleep(4001)
+    toastLog(text("确定").findOne(4000).click())
+    sleep(4001)
+    toastLog(id("com.cxinventor.file.explorer:id/home").findOne(4000).click())//zhuye
+    sleep(4001)
+  
+
+}
+function cx() {
+    launchApp('CX文件管理器')
+    sleep(4001)
+    toastLog(textContains("/b01/a711").findOne(4000).parent().click())
+    sleep(4001)
+    toastLog(desc("更多选项").findOne(4000).click())
+    sleep(4001)
+    toastLog(text("搜索").findOne(4000).parent().parent().parent().click())
+    sleep(4001)
+    toastLog(id("com.cxinventor.file.explorer:id/edit").findOne(4000).setText('C' + (i + 1) + '.'))
+    sleep(4001)
+    click(990, 2083)
+    sleep(4001)
+    while (!id("com.cxinventor.file.explorer:id/filename").exists()) {
+
+
+        print('meiyou')
+        back()
+        sleep(4001)
+        i = i + 1
+        toastLog(desc("更多选项").findOne(4000).click())
+        sleep(4001)
+        toastLog(text("搜索").findOne(4000).parent().parent().parent().click())
+        sleep(4001)
+        toastLog(id("com.cxinventor.file.explorer:id/edit").findOne(4000).setText('C' + (i + 1) + '.'))
+        sleep(4001)
+        click(990, 2083)
+        sleep(4001)
+
+
+    }
+    toastLog(desc("Toggle selection").findOne(4000).parent().parent().longClick())
+    sleep(4001)
+    toastLog(text("复制").findOne(4000).parent().click())
+    sleep(4001)
+    back()
+    sleep(4001)
+    toastLog(id("com.cxinventor.file.explorer:id/home").findOne(4000).click())//zhuye
+    sleep(4001)
+    toastLog(textContains("/a02").findOne(4000).parent().click())
+    sleep(4001)
+    toastLog(text("贴上").findOne(4000).parent().click())
+    sleep(4001)
+    toastLog(id("com.cxinventor.file.explorer:id/home").findOne(4000).click())//zhuye
+    sleep(4001)
+
+
+}
+
+
+function pxx() {
+
+    launchApp('抖音');
+    sleep(8000)
+    back()
+    sleep(3000)
+     toastLog(descContains("拍摄").findOne(4000).bounds())
+    click(descContains("拍摄").findOne(4000).bounds().centerX(),descContains("拍摄").findOne(4000).bounds().centerY())
+    
+    sleep(7000)
+    toastLog(text("相册").findOne(4000).parent().parent().click())
+    sleep(5000)
+    toastLog(id("com.ss.android.ugc.aweme:id/bou").findOne(4000).click())
+    sleep(5000)
+    toastLog(textContains("a02").findOne(4000).parent().click())
+    sleep(5000)
+     toastLog(id("com.ss.android.ugc.aweme:id/jp0").findOne(4000).parent().click())
+    sleep(5000)
+    toastLog(id("com.ss.android.ugc.aweme:id/om0").findOne(4000).click())//下一步
+    sleep(8000)
+//     toastLog(textContains("点击展开更多").findOne(4000).click())
+//     sleep(3000)
+    toastLog(desc("滤镜").findOne(4000).click())
+    sleep(3000)
+
+    toastLog(text("日常").findOne(4000).parent().parent().click())
+    sleep(3000)
+   	
+   toastLog(text("茶系").findOne(4000).bounds())
+   click(text("茶系").findOne(4000).bounds().centerX(),text("茶系").findOne(4000).bounds().centerY())
+    sleep(3000)
+    back()
+    sleep(3000)
+
+    toastLog(id("com.ss.android.ugc.aweme:id/keh").findOne(4000).click())
+    sleep(8000)
+   toastLog(setText(r1[i+1]))
+
+    sleep(3000)
+    back()
+    sleep(4000)
+    toastLog(id("com.ss.android.ugc.aweme:id/keh").findOne(4000).click())
+    sleep(3000)
+    toastLog(id("com.ss.android.ugc.aweme:id/lz_").findOne(4000).click())
+    sleep(8000)
+
+
+}
+

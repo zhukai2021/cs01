@@ -1,0 +1,93 @@
+import requests
+from lxml.html import tostring
+import re
+from lxml import etree
+ii=1
+iii=1
+for i in range(0,16):
+    url='https://www.7476.com/mobile_30_0_0_'+str(i)+'.html'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36 Edg/96.0.1054.53'}
+    r = requests.get(url, headers=headers)
+    r.encoding = 'utf-8'
+    r2 = etree.HTML(r.text)
+    #print(r.text)
+    #exit()
+    r4 = r2.xpath("/html/body/div[4]/div/div[3]/div[1]/div[1]/div/div/div/ul//li/a/@href")
+    # print(r4)
+    # print(len(r4))
+    # exit()
+    for r5 in r4:
+        # print(r5)
+        try:
+            r = requests.get('https://www.7476.com'+r5, headers=headers)
+        except:
+            print("跳出全部循环1111")
+            break
+        else:
+            pass
+            # print("继续循环")
+
+        # print(r.text)
+        # r.encoding = 'gbk'
+        r2 = etree.HTML(r.text)
+        r21 = r2.xpath("/html/body/div[4]/div/div[2]/div/div[1]/div[1]/h1")
+        r22 = r2.xpath("/html/body/div[4]/div/div[2]/div/div[1]/div[1]/em")
+        #print(r21[0].text+r22[0].text)
+        # for x,y in zip(r21,r22):
+        #     print(x.text + y.text)
+        print(int(r22[0].text))
+        print(r5[:-5])
+        for i1 in range(0, int(r22[0].text)):
+            try:
+                r = requests.get('https://www.7476.com' + r5[:-5]+'_'+str(i1)+'.html', headers=headers)
+            except:
+                print("跳出全部循环222222")
+                break
+            else:
+                pass
+                # print("继续循环")
+
+            # print(r.text)
+            # r.encoding = 'gbk'
+            r2 = etree.HTML(r.text)
+            r6 = r2.xpath("/html/body/div[4]/div/div[2]/div/div[2]/div/div[1]/a/img/@src")
+
+            try:
+                r = requests.get(r6[0], headers=headers)
+            except:
+                print("结束单次循环")
+                continue
+            else:
+                pass
+                # print("继续循环")
+
+            try:
+                with open('./a3/' + 'f' +'-'+ str(ii) + '--' + str(i1) + '---' + r21[0].text + '.jpg', 'wb') as f:
+                    f.write(r.content)
+            except IOError:
+                print("Error: 没有找到文件或读取文件失败")
+            else:
+                print("内容写入文件成功")
+            # if iii > 2:
+            #     ii = ii + 1
+            #     iii = 1
+            # else:
+            #     iii = iii + 1
+        ii = ii + 1
+
+
+
+
+
+
+
+
+
+
+
+# <li><a href="https://pic.netbian.com/tupian/27808.html" target="_blank"><img src="https://pic.netbian.com/uploads/allimg/210727/000113-16273152736fb6.jpg" alt="白蛇2青蛇劫起3440x1440带鱼屏壁纸" /><b>
+    # print(type(r1.text))
+    # with open('r1.html','w',encoding='gbk') as f:
+    #  f.write(r1)
+

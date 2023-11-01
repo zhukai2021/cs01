@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>表白墙</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			color: #333333;
+			margin-top: 50px;
+		}
+		form {
+			margin: 50px auto;
+			width: 500px;
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #cccccc;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+			color: #333333;
+		}
+		input[type="text"], textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		input[type="submit"] {
+			background-color: #333333;
+			color: #ffffff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.message {
+			margin: 50px auto;
+			width: 500px;
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #cccccc;
+		}
+		.message p {
+			margin-bottom: 10px;
+			font-size: 16px;
+			color: #333333;
+		}
+	</style>
+</head>
+<body>
+	<h1>表白墙</h1>
+	<form id="messageForm">
+		<label for="name">您的姓名：</label>
+		<input type="text" id="name" name="name" required>
+		<label for="message">表白内容：</label>
+		<textarea id="message" name="message" rows="5" required></textarea>
+		<input type="submit" value="提交">
+	</form>
+	<div id="messages"></div>
+	<script>
+		var messageForm = document.getElementById("messageForm");
+		var messagesDiv = document.getElementById("messages");
+
+		// 提交表白信息
+		messageForm.addEventListener("submit", function(event) {
+			event.preventDefault();
+			var name = document.getElementById("name").value;
+			var message = document.getElementById("message").value;
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/messages");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					var response = JSON.parse(xhr.responseText);
+					var messageDiv = document.createElement("div");
+					messageDiv.className = "message";
+					messageDiv.innerHTML = "<p><strong>" + response.name + "：</strong>" + response.message + "</p>";
+					messagesDiv.appendChild(messageDiv);
+					messageForm.reset();
+				}
+			};
+			xhr.send(JSON.stringify({ name: name, message: message }));
+		});
+
+		// 获取表白信息列表
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "/messages");
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState === 4 && xhr.status === 200) {
+				var messages = JSON.parse(xhr.responseText);
+				for (var i = 0; i < messages.length; i++) {
+					var messageDiv = document.createElement("div");
+					messageDiv.className = "message";
+					messageDiv.innerHTML = "<p><strong>" + messages[i].name + "：</strong>" + messages[i].message + "</p>";
+					messagesDiv.appendChild(messageDiv);
+				}
+			}
+		};
+		xhr.send();
+	</script>
+</body>
+</html>

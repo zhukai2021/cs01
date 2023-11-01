@@ -1,0 +1,80 @@
+import requests
+from lxml.html import tostring
+import re
+from bs4 import BeautifulSoup
+from lxml import etree
+import csv
+with open('cs3.csv', mode='a', encoding='utf-8', newline='') as f:
+    fieldnames = ('1', '2', '3', '4', '5', '6', '7')
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+for i in range(1,51):
+    url='http://www.wenzizhan.com/weixiaoshuo?page='+str(i)
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36 Edg/96.0.1054.53'}
+    r = requests.get(url, headers=headers)
+    #r.encoding = 'gbk'
+    # r1=r.text.replace("/tupian/", "https://pic.netbian.com/tupian/").replace("/uploads/", "https://pic.netbian.com/uploads/")
+    r2 = etree.HTML(r.text)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    b1=soup.find("div",class_="theContentMain").find_all("a",class_="aType7")
+
+    for b2 in b1:
+        print(b2['href'])
+        r = requests.get(b2['href'], headers=headers)
+        soup = BeautifulSoup(r.text, 'html.parser')
+        b1 = soup.find("div", class_="mainContent")
+        b2=soup.find("div", class_="mainTitle").find("h1").text
+
+        dr = re.compile(r'(<[^>]+>|\s)', re.S)
+        dr1 = re.compile(r' ', re.S)
+        dd = dr.sub('', str(b1))
+        print(b2)
+        print(dd)
+        with open('cs3.csv', 'a', encoding='utf-8',newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writerow({'1': str(b2), '2': str(dd)})
+
+
+
+    #r4 = r2.xpath("/html/body/div[4]/div/div[1]/div[2]/div[2]")[0]
+    # r5 = etree.tostring(r4, encoding="gbk", pretty_print=True, method="html").decode('gbk')  # 可以正常显示中文
+    # r1 = r5.replace("href=\"", "href=\"https://pic.netbian.com").replace("src=\"", "src=\"https://pic.netbian.com")
+    # print(r1)
+    # print(type(r1))
+    print(b2)
+
+    #break
+    # z = re.compile(
+    #     r"<li><a href=\"(?P<a1>.*?)\" target=\"_blank\"><img src=\"(?P<a2>.*?)\" alt=\"(?P<a3>.*?)\"><b>(?P<a4>.*?)</b></a></li>",
+    #     re.S)
+    # # z=re.compile(r"<li>.*?</li>",re.S)
+    # z1 = z.finditer(r1)
+    # for b1 in z1:
+    #     print(b1.group("a1"))
+    #     print(b1.group("a4"))
+    #     r = requests.get(b1.group("a1"), headers=headers)
+    #     print(r.text)
+    #     r.encoding = 'gbk'
+    #     # r1=r.text.replace("/tupian/", "https://pic.netbian.com/tupian/").replace("/uploads/", "https://pic.netbian.com/uploads/")
+    #     r2 = etree.HTML(r.text)
+    #     r4 = r2.xpath("/html/body/div[2]/div[1]/div[2]/div[1]/div[2]/a/img/@src")
+    #     print('https://pic.netbian.com' + r4[0])
+    #     r = requests.get('https://pic.netbian.com' + r4[0], headers=headers)
+    #     print(r)
+    #     try:
+    #         with open('./a/' + b1.group("a4") + '.jpg', 'wb') as f:
+    #             f.write(r.content)
+    #     except IOError:
+    #         print("Error: 没有找到文件或读取文件失败")
+    #
+    #     else:
+    #         print("内容写入文件成功")
+
+
+
+    # <li><a href="https://pic.netbian.com/tupian/27808.html" target="_blank"><img src="https://pic.netbian.com/uploads/allimg/210727/000113-16273152736fb6.jpg" alt="白蛇2青蛇劫起3440x1440带鱼屏壁纸" /><b>
+    # print(type(r1.text))
+    # with open('r1.html','w',encoding='gbk') as f:
+    #  f.write(r1)
+

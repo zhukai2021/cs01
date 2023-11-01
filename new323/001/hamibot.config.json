@@ -1,0 +1,12 @@
+{
+    "fileMark": {
+        "scriptFile": "src/index.js",
+        "configFile": "src/config.json"
+    },
+    "name": "001",
+    "scriptId": "6423dc667341031fcc883f3a",
+    "executeRobot": {
+        "_id": "6363c5f23932dc0c575186f0",
+        "name": "红手指2"
+    }
+}
