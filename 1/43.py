@@ -9,7 +9,14 @@ height= 1080
 
 from moviepy.editor import VideoFileClip, AudioFileClip
 from moviepy.audio.fx.all import audio_loop
+import os
 def hs1(jg1):
+    background_image_path = f"D:/31/a{jg1}.png"
+    if os.path.exists(background_image_path):
+        print("文件存在")
+    else:
+        print("文件不存在")
+        return
 
     def crop_video_with_looping_audio(input_video, input_audio, output_file, x, y, width, height):
         # 打开音频文件并循环
@@ -62,6 +69,6 @@ def hs1(jg1):
 
     print("转换完成！")
 
-for i1 in range(141,181):
+for i1 in range(181,281):
     hs1(str(i1))
 print("转换完成！")
