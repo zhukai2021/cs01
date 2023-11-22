@@ -19,7 +19,7 @@
 import subprocess
 
 # 设置输入视频路径、输出路径和背景图片路径
-input_video_path = "D:1/925.mp4"
+input_video_path = "D:1/1.mp4"
 output_video_path = "D:1/output_926.mp4"
 background_image_path = "D:1/9242.png"
 
