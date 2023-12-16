@@ -11,29 +11,7 @@ toastLog('2022070401');
 toastLog(x);
 toastLog(y);
 
-// sj1=0
-// threads.start(function() {
-//     //在新线程执行的代码
-//     true
-//     while (true) {
-//       log('子线程');
-//       sleep(60*1000)
-      
-//       sj1=sj1+60*1000
-//       log(sj1)
-//       if(sj1>10*60*1000){
-//         log('jieshu')
-//         url = "http://wxpusher.zjiecode.com/api/send/message/?appToken=AT_GRDG2ZQu57APwWcSxZpavjK3qNl9tCfO&content=languang-dyjsb-chucuole&uid=UID_JNz25wHNb8ExLeaoWTMY98BFuIcL&url=http%3a%2f%2fwxpusher.zjiecode.com"//写入
 
-//         var res = http.get(url);
-//         home()
-
-//         exit()
-//       }
-
-
-//     }
-//   });
 
 
 
@@ -131,9 +109,9 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a1-' + (a) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a) + '.'))
   sleep(4001)
-  click(0.95 * x, 0.95 * y)
+  click(0.95 * x, 0.91 * y)
   sleep(4001)
   while (!id("com.cxinventor.file.explorer:id/filename").exists()) {
 
@@ -182,24 +160,27 @@ function cx() {
 
 function dy() {
 
-    // launchApp('抖音');
-    // sleep(8000)
-    // back()
-    // sleep(3000)
+  //   launchApp('抖音');
+  //   sleep(8000)
+  //   back()
+  //   sleep(3000)
 
-   // toastLog(descContains("侧边栏").findOne().click())
-   toastLog(text("扫一扫").findOne().parent().click())
+  //  toastLog(descContains("侧边栏").findOne().click())
+  //  sleep(3000)
+  //  toastLog(text("扫一扫").findOne().parent().click())
+  //toastLog(text("相册").findOne().parent().parent().click())
+  toastLog(id("com.ss.android.ugc.aweme:id/content_container").findOne().children(0).children(0).children(0).click())
 
-    sleep(3000000)
+  sleep(3000000)
 
-    descContains("更多功能").findOne().click()
-    sleep(3000)
-    desc("拍日常, 按钮").findOne().click()
+  descContains("更多功能").findOne().click()
+  sleep(3000)
+  desc("拍日常, 按钮").findOne().click()
 
-    sleep(7000)
-    toastLog(text("相册").findOne().parent().parent().click())
-    sleep(5000)
-    toastLog(id("m.l.plugin.tools_plugin:id/change_album_layout").findOne().click())//com.ss.android.ugc.aweme:id/bo_
+  sleep(7000)
+  toastLog(text("相册").findOne().parent().parent().click())
+  sleep(5000)
+  toastLog(id("m.l.plugin.tools_plugin:id/change_album_layout").findOne().click())//com.ss.android.ugc.aweme:id/bo_
     sleep(5000)
 
 
