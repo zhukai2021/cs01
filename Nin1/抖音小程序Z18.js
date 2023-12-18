@@ -23,7 +23,7 @@ var a = res.body.json();
 print(a)
 
 
-for (i = 0; i < 0; i++) {//232 322//206 207-211 275 289   327
+for (i = 0; i < 1; i++) {//232 322//206 207-211 275 289   327
   
   if(!device.isScreenOn())
     {
@@ -37,8 +37,8 @@ for (i = 0; i < 0; i++) {//232 322//206 207-211 275 289   327
 
 
   
-  	cx()
-    pxx()
+  	//cx()
+    dy()
     cx2()
    data = {fname: "lg1", age: a+1,c:Date()}
     url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
@@ -73,31 +73,12 @@ function cx2() {
   sleep(4001)
   toastLog(id("com.cxinventor.file.explorer:id/home").findOne().click())//zhuye
   sleep(4001)
-    // launchApp('CX文件管理器')
-    // sleep(4001)
-    // toastLog(textContains("/a02").findOne().parent().click())
-    // sleep(4001)
-    // //toastLog(id("com.cxinventor.file.explorer:id/filename").findOne().parent().longClick())
-    // toastLog(desc("Toggle selection").findOne().parent().parent().longClick())
-    // sleep(4001)
-    // toastLog(text("删除").findOne().parent().click())
-    // sleep(4001)
-    // toastLog(text("确定").findOne().click())
-    // sleep(4001)
-    // toastLog(id("com.cxinventor.file.explorer:id/home").findOne().click())//zhuye
-    // sleep(4001)
-    // // sleep(4001)
-    // // toastLog(text("/live").findOne().parent().click())
-    // // sleep(4001)
-    // // toastLog(text("贴上").findOne().parent().click())
-    // // sleep(4001)
-    // // back()
-    // // sleep(4001)
+
 
 
 
 }
-dy()
+//dy()
 function cx() {
   launchApp('CX文件管理器')
   sleep(4001)
@@ -109,7 +90,7 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+1) + '.'))
   sleep(4001)
   click(0.95 * x, 0.91 * y)
   sleep(4001)
@@ -160,109 +141,65 @@ function cx() {
 
 function dy() {
 
-  //   launchApp('抖音');
-  //   sleep(8000)
-  //   back()
-  //   sleep(3000)
-
-  //  toastLog(descContains("侧边栏").findOne().click())
-  //  sleep(3000)
-  //  toastLog(text("扫一扫").findOne().parent().click())
-  //toastLog(text("相册").findOne().parent().parent().click())
-  toastLog(id("com.ss.android.ugc.aweme:id/content_container").findOne().children(0).children(0).children(0).click())
-
-  sleep(3000000)
-
-  descContains("更多功能").findOne().click()
-  sleep(3000)
-  desc("拍日常, 按钮").findOne().click()
-
-  sleep(7000)
-  toastLog(text("相册").findOne().parent().parent().click())
-  sleep(5000)
-  toastLog(id("m.l.plugin.tools_plugin:id/change_album_layout").findOne().click())//com.ss.android.ugc.aweme:id/bo_
-    sleep(5000)
-
-
-
-    if (textContains("a02").exists()) {
-      
-       toastLog('继续')//递归
-    }
-    else{
-      
-      back()
+      launchApp('抖音');
       sleep(8000)
-      toastLog(text("相册").findOne().parent().parent().click())
-      sleep(5000)
-      toastLog(id("m.l.plugin.tools_plugin:id/change_album_layout").findOne().click())//com.ss.android.ugc.aweme:id/bo_
-      sleep(5000)
-      if (textContains("a02").exists()) {
-        toastLog('继续')
+      back()
+      sleep(3000)
 
-      }
-      
-     else{
-       
-       back()
-       sleep(8000)
-       toastLog(text("相册").findOne().parent().parent().click())
-       sleep(5000)
-       toastLog(id("m.l.plugin.tools_plugin:id/change_album_layout").findOne().click())//com.ss.android.ugc.aweme:id/bo_
-       sleep(5000)
- 
-     }
-
-    }
-    
-    
-
-
-    // swipe(0.9 * x, 0.9 * y, 0.81 * x, 0.2 * y, 800);
+     toastLog(descContains("侧边栏").findOne().click())
+     sleep(3000)
+     toastLog(text("扫一扫").findOne().parent().click())
+     sleep(3000)
+    toastLog(text("相册").findOne().parent().parent().click())
     sleep(5000)
+    // b1=id("com.ss.android.ugc.aweme:id/jav").findOne().child(0).bounds()
+    // toastLog(b1.centerX())
+    // toastLog(b1.centerY())
+    toastLog(id("com.ss.android.ugc.aweme:id/jav").findOne().child(0).click())
+    sleep(10000)
+    toastLog(text("授权确认推广").findOne().click())
+    sleep(10000)
+    toastLog(desc("更多").findOne().click())
+    sleep(5000)
+    toastLog(text("拍抖音").findOne().parent().click())
+    sleep(3000)
+
+    // descContains("更多功能").findOne().click()
+    // sleep(3000)
+    // desc("拍日常, 按钮").findOne().click()
+
+    // sleep(7000)
+    toastLog(text("相册").findOne().parent().parent().click())
+    sleep(5000)
+
+
+    toastLog(text("所有照片").findOne().parent().click())//com.ss.android.ugc.aweme:id/bo_
+    sleep(5000)
+
+
+
+     
+
+
+
+      sleep(5000)
     toastLog(textContains("a02").findOne().parent().click())
+
     sleep(5000)
     
     toastLog(descContains(", 未选中").findOne().parent().click())
     sleep(5000)
-  
-  	toastLog(text("确认").findOne().click())//queding
-    sleep(8000)
-
-    
-//     toastLog(id("m.l.plugin.tools_plugin:id/tv_choose_music").findOne().bounds())
-//     click(id("m.l.plugin.tools_plugin:id/tv_choose_music").findOne().bounds().centerX(), id("m.l.plugin.tools_plugin:id/tv_choose_music").findOne().bounds().centerY())
-//     sleep(3000)
-//     toastLog(desc("收藏").findOne().click())
-//     sleep(3000)
-//     toastLog(textContains("0:").find()[i%5].parent().parent().parent(). click())
-//     sleep(3000)
-//     back()
-    
-    //     toastLog(textContains("点击展开更多").findOne().click())
-    //     sleep(3000)
-    toastLog(desc("滤镜").findOne().click())
-    sleep(7000)
-
-    toastLog(text("日常").findOne().parent().parent().click())
-    sleep(3000)
-
-    toastLog(text("高清").findOne().bounds())
-    click(text("高清").findOne().bounds().centerX(), text("高清").findOne().bounds().centerY())
-    sleep(3000)
-    back()
-    sleep(3000)
-  	toastLog(text("下一步").findOne().parent().click())//下一步
-
-    
-   	sleep(8000)
- 	 	url = "http://kdy1.qwxyx.xyz/jk/post-cha2.php?BIAO=yy1k&NO="+(a+1)//wa
-		var res = http.get(url);
-		var c = res.body.string();
    
-		
-    print(c)
-   	toastLog(setText(c))
+  	toastLog(text("下一步").findOne().click())//下一步
+    sleep(3000)
+    toastLog(text("下一步").findOne().parent().click())//下一步
+    sleep(3000)
+
+   
+  
+ 	
+
+   	toastLog(setText("#诗词 #每天都有一个好心情 #每天学习一点点"))
     
   
 
@@ -271,8 +208,13 @@ function dy() {
     sleep(4000)
     toastLog(text("下一步").findOne().parent().click())//下一步
     sleep(3000)
-    toastLog(id("m.l.plugin.tools_plugin:id/publish_container").findOne().click())
+    toastLog(desc("发布").findOne().click())
     sleep(8000)
+    back()
+    sleep(3000)
+    back()
+    sleep(3000)
+    back()
 
 
 }
