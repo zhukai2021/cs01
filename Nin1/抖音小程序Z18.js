@@ -37,7 +37,7 @@ for (i = 0; i < 1; i++) {//232 322//206 207-211 275 289   327
 
 
   
-  	//cx()
+  	cx()
     dy()
     cx2()
    data = {fname: "lg1", age: a+1,c:Date()}
@@ -90,7 +90,7 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+1) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+2) + '.'))
   sleep(4001)
   click(0.95 * x, 0.91 * y)
   sleep(4001)
