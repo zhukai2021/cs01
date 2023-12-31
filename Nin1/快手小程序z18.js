@@ -10,7 +10,7 @@ if (x == 0) {
 toastLog('2022101202');
 toastLog(x);
 toastLog(y);
-zz="a3"
+zz="a02"
 sj1=0
 threads.start(function() {
     //在新线程执行的代码
@@ -42,7 +42,7 @@ threads.start(function() {
 // r1 = r0.split(/[0-9]{1,3},/)
 // log(r1[1])
 
-url = "http://kdy1.qwxyx.xyz/jk/post-cha.php?fname=Z18-KSJ"//编号
+url = "http://kdy1.qwxyx.xyz/jk/post-cha.php?fname=z18dy"//编号
 url1 = "http://kdy1.qwxyx.xyz/jk/post-gai.php"//写入
 
 var res = http.get(url);
@@ -64,13 +64,13 @@ for (i = 0; i < 1111; i++) {//232 322//206 207-211 275 289   327
 
 
   
-  	cx()
+  	//cx()
     pxx()
     cx2()
-   data = {fname: "Z18-KSJ", age: a+1,c:Date()}
-    url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
-    var res = http.post(url,data);
-    var b = res.body.json();
+  //  data = {fname: "Z18-KSJ", age: a+1,c:Date()}
+  //   url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
+  //   var res = http.post(url,data);
+  //   var b = res.body.json();
     a=a+1
     print(b)
   	sleep(4001)
@@ -184,62 +184,30 @@ function pxx() {
    	toastLog(id("com.kuaishou.nebula:id/left_btn").findOne().click())
   	sleep(7000)
    	toastLog(text("小程序").findOne().parent().click())
+  	//sleep(7000)
+    sleep(14000)
+  	toastLog(textContains("适合你的").findOne().parent().click())
   	sleep(7000)
-  	toastLog(text("抖推猫趣测趣玩").find()[i%2+2].parent().click())
- 		sleep(14000)
-  	toastLog(id("com.kuaishou.nebula.miniapp:id/toolbar_more_btn_container").findOne().click())
-  	sleep(7000)
- 		toastLog(text("发快手").findOne().parent().click())
+    toastLog(id("com.kuaishou.nebula.miniapp:id/toolbar_more_btn_container").findOne().click())
     sleep(7000)
-//   click(text("拍照").findOne().bounds().centerX(), text("拍照").findOne().bounds().centerY())
-//   sleep(6000)
-  	//click(0.52*x+0.5*text("音乐").findOne().parent().bounds().centerX(),text("音乐").findOne().parent().bounds().centerY())
-  
-    //toastLog(text("相册").findOne().parent().click())
+ 	toastLog(text("发快手").findOne().parent().click())
+    sleep(7000)
     toastLog(text("相册").findOne().parent().parent().click())
-  	//toastLog(id("com.kuaishou.nebula.post:id/album_layout").findOne().click())
-  //click(id("com.kuaishou.nebula:id/media_pick_num_area").findOne().bounds().centerX(), id("com.kuaishou.nebula:id/media_pick_num_area").findOne().bounds().centerY())
+  
     sleep(5000)
     toastLog(text("最近项目").findOne().parent().parent().click())
     sleep(5000)
-  	swipe(0.9 * x, 0.9 * y, 0.81 * x, 0.2 * y, 800)
-  	sleep(5000)
-    toastLog(textContains(zz).findOne().parent().parent().click())
+    toastLog(textContains('a02').findOne().parent().parent().click())
     sleep(8000)
     toastLog(id("com.kuaishou.nebula:id/media_pick_num_area").findOne().click())
     sleep(5000)
-     toastLog(text("一键出片").findOne().click())
-    sleep(22000)
-  toastLog(textContains("模板").findOne().parent().click())
-  sleep(3000)
-   toastLog(desc("原片").findOne().click())
-     sleep(3000)
-  toastLog(id("com.kuaishou.nebula:id/right_btn").findOne().click())
-  sleep(3000)
-    toastLog(textContains("滤镜").findOne().parent().click())
     sleep(3000)
-
-    toastLog(text("白嫩").findOne().bounds())
-    click(text("白嫩").findOne().bounds().centerX(), text("白嫩").findOne().bounds().centerY())
-    sleep(3000)
-    back()
-    sleep(3000)
-  	// click(0.5*textContains("滤镜").findOne().parent().bounds().centerX()+0.5*textContains("模板").findOne().parent().bounds().centerX(), textContains("滤镜").findOne().parent().bounds().centerY())
-    // sleep(3000)
-    // toastLog(textContains("收藏").findOne().click())
-    // sleep(3000)
-  	// toastLog(id("com.kuaishou.nebula:id/root").find()[i%5].click())
-    // sleep(3000)
-    // back()
-    sleep(3000)
-    toastLog(id("com.kuaishou.nebula.post:id/next_step_button").findOne().click())
+    toastLog(id("com.kuaishou.nebula:id/next_step").findOne().click())
     sleep(8000)
-  url = "http://kdy1.qwxyx.xyz/jk/post-cha2.php?BIAO=z18wa1&NO="+(a+1)//wa
-	var res = http.get(url);
-	var c = res.body.string();
-	print(c)
+  toastLog(id("com.kuaishou.nebula.post:id/next_step_button").findOne().click())
+  sleep(8000)
 
-    toastLog(id("com.kuaishou.nebula:id/editor").findOne().setText(c))
+    toastLog(id("com.kuaishou.nebula:id/editor").findOne().setText("#诗词 #每日三两句 #每天学习一点点"))
     sleep(8000)
     toastLog(text("发布").findOne().click())
     sleep(8000)
@@ -251,6 +219,72 @@ function pxx() {
   	sleep(6000)
    	back()
   	sleep(6000)
+  	//toastLog(text("抖推猫趣测趣玩").find()[i%2+2].parent().click())
+//  		sleep(14000)
+//   	toastLog(id("com.kuaishou.nebula.miniapp:id/toolbar_more_btn_container").findOne().click())
+//   	sleep(7000)
+//  		toastLog(text("发快手").findOne().parent().click())
+//     sleep(7000)
+// //   click(text("拍照").findOne().bounds().centerX(), text("拍照").findOne().bounds().centerY())
+// //   sleep(6000)
+//   	//click(0.52*x+0.5*text("音乐").findOne().parent().bounds().centerX(),text("音乐").findOne().parent().bounds().centerY())
+  
+//     //toastLog(text("相册").findOne().parent().click())
+//     toastLog(text("相册").findOne().parent().parent().click())
+//   	//toastLog(id("com.kuaishou.nebula.post:id/album_layout").findOne().click())
+//   //click(id("com.kuaishou.nebula:id/media_pick_num_area").findOne().bounds().centerX(), id("com.kuaishou.nebula:id/media_pick_num_area").findOne().bounds().centerY())
+//     sleep(5000)
+//     toastLog(text("最近项目").findOne().parent().parent().click())
+//     sleep(5000)
+//   	swipe(0.9 * x, 0.9 * y, 0.81 * x, 0.2 * y, 800)
+//   	sleep(5000)
+//     toastLog(textContains(zz).findOne().parent().parent().click())
+//     sleep(8000)
+//     toastLog(id("com.kuaishou.nebula:id/media_pick_num_area").findOne().click())
+//     sleep(5000)
+//      toastLog(text("一键出片").findOne().click())
+//     sleep(22000)
+//   toastLog(textContains("模板").findOne().parent().click())
+//   sleep(3000)
+//    toastLog(desc("原片").findOne().click())
+//      sleep(3000)
+//   toastLog(id("com.kuaishou.nebula:id/right_btn").findOne().click())
+//   sleep(3000)
+//     toastLog(textContains("滤镜").findOne().parent().click())
+//     sleep(3000)
+
+//     toastLog(text("白嫩").findOne().bounds())
+//     click(text("白嫩").findOne().bounds().centerX(), text("白嫩").findOne().bounds().centerY())
+//     sleep(3000)
+//     back()
+//     sleep(3000)
+//   	// click(0.5*textContains("滤镜").findOne().parent().bounds().centerX()+0.5*textContains("模板").findOne().parent().bounds().centerX(), textContains("滤镜").findOne().parent().bounds().centerY())
+//     // sleep(3000)
+//     // toastLog(textContains("收藏").findOne().click())
+//     // sleep(3000)
+//   	// toastLog(id("com.kuaishou.nebula:id/root").find()[i%5].click())
+//     // sleep(3000)
+//     // back()
+//     sleep(3000)
+//     toastLog(id("com.kuaishou.nebula.post:id/next_step_button").findOne().click())
+//     sleep(8000)
+//   // url = "http://kdy1.qwxyx.xyz/jk/post-cha2.php?BIAO=z18wa1&NO="+(a+1)//wa
+// 	// var res = http.get(url);
+// 	// var c = res.body.string();
+// 	// print(c)
+
+//     toastLog(id("com.kuaishou.nebula:id/editor").findOne().setText("#诗词 #每日三两句 #每天学习一点点"))
+//     sleep(8000)
+//     toastLog(text("发布").findOne().click())
+//     sleep(8000)
+//  		back()
+//   	sleep(6000)
+//    	back()
+//   	sleep(6000)
+//   	back()
+//   	sleep(6000)
+//    	back()
+//   	sleep(6000)
   
   
 

@@ -41,8 +41,8 @@ threads.start(function() {
 // r1 = r0.split(/[0-9]{1,3},/)
 // log(r1[1])
 
-url = "http://61.191.56.132:20177/jk/post-cha.php?fname=Z18-KSJ"//编号
-url1 = "http://61.191.56.132:20177/jk/post-gai.php"//写入
+url = "http://kdy1.qwxyx.xyz/jk/post-cha.php?fname=z18dy"//编号
+url1 = "http://kdy1.qwxyx.xyz/jk/post-gai.php"//写入
 
 var res = http.get(url);
 var a = res.body.json();
@@ -65,11 +65,11 @@ for (i = 0; i < 1111; i++) {//232 322//206 207-211 275 289   327
   
   	//cx()
     pxx()
-    cx2()
-   data = {fname: "Z18-KSJ", age: a+1,c:Date()}
-    url = "http://61.191.56.132:20177/jk/post-gai.php"
-    var res = http.post(url,data);
-    var b = res.body.json();
+    //cx2()
+  //  data = {fname: "Z18-KSJ", age: a+1,c:Date()}
+  //   url = "http://61.191.56.132:20177/jk/post-gai.php"
+  //   var res = http.post(url,data);
+  //   var b = res.body.json();
     a=a+1
     print(b)
     sj2=random(7000000,10000000)

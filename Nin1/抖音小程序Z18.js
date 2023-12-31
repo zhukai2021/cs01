@@ -90,9 +90,9 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+3) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+5) + '.'))
   sleep(4001)
-  click(0.95 * x, 0.91 * y)
+  click(0.95 * x, 0.99 * y)
   sleep(4001)
   while (!id("com.cxinventor.file.explorer:id/filename").exists()) {
 
@@ -107,7 +107,7 @@ function cx() {
       sleep(4001)
       toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a1-' + (a + 1) + '.'))
       sleep(4001)
-      click(990, 2083)
+      click(0.95 * x, 0.99 * y)
       sleep(4001)
 
 
@@ -155,7 +155,7 @@ function dy() {
     // b1=id("com.ss.android.ugc.aweme:id/jav").findOne().child(0).bounds()
     // toastLog(b1.centerX())
     // toastLog(b1.centerY())
-    toastLog(id("com.ss.android.ugc.aweme:id/jav").findOne().child(0).click())
+    toastLog(id("com.ss.android.ugc.aweme:id/root_view").findOnce(1).click())
     sleep(10000)
     toastLog(text("授权确认推广").findOne().click())
     sleep(15000)
