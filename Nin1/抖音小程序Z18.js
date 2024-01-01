@@ -40,15 +40,15 @@ for (i = 0; i < 1; i++) {//232 322//206 207-211 275 289   327
   	cx()
     dy()
     //cx2()
-   data = {fname: "lg1", age: a+1,c:Date()}
-    url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
-    var res = http.post(url,data);
-    var b = res.body.json();
-    a=a+1
-    print(b)
-    sj2=random(7000000,10000000)
-    sj1=0-sj2
-   sleep(sj2);
+  //  data = {fname: "lg1", age: a+1,c:Date()}
+  //   url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
+  //   var res = http.post(url,data);
+  //   var b = res.body.json();
+  //   a=a+1
+  //   print(b)
+  //   sj2=random(7000000,10000000)
+  //   sj1=0-sj2
+  //  sleep(sj2);
    
  
 
@@ -90,7 +90,7 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+5) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+6) + '.'))
   sleep(4001)
   click(0.95 * x, 0.99 * y)
   sleep(4001)
