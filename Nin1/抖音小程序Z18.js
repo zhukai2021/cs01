@@ -90,7 +90,7 @@ function cx() {
   sleep(4001)
   toastLog(text("搜索").findOne().parent().parent().parent().click())
   sleep(4001)
-  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+7) + '.'))
+  toastLog(id("com.cxinventor.file.explorer:id/edit").findOne().setText('a' + (a+8) + '.'))
   sleep(4001)
   click(0.95 * x, 0.99 * y)
   sleep(4001)
