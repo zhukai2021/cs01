@@ -32,7 +32,7 @@ mu0=['7207.png,7207.png,7207.png']
 
 
 # 字体大小
-for i0 in range(84,85):
+for i0 in range(1,120):
     sql = f"SELECT * FROM shi WHERE NO= '{i0}'"
     cursor.execute(sql)
 
@@ -142,7 +142,7 @@ for i0 in range(84,85):
     #img_path = os.path.join('.', 'output', 'center_text.jpg')
 
     # 保存图片
-    bg.save('D:/31/' +'a'+str(i0)+'.png')
+    bg.save('D:/32/' +'a'+str(i0)+'.png')
     #bg.show()
     print('保存成功 at {}')
 
