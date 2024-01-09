@@ -66,7 +66,7 @@ for (i = 0; i < 1111; i++) {//232 322//206 207-211 275 289   327
   
   	//cx()
     pxx()
-    cx2()
+    //cx2()
   //  data = {fname: "Z18-KSJ", age: a+1,c:Date()}
   //   url = "http://kdy1.qwxyx.xyz/jk/post-gai.php"
   //   var res = http.post(url,data);
