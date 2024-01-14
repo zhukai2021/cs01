@@ -11,4 +11,4 @@ toastLog('2022070401');
 toastLog(x);
 toastLog(y);
 //toastLog(id("com.cxinventor.file.explorer:id/home").findOne().click())//zhuye
-toastLog(desc("发布，按钮").findOne().click())
+toastLog(desc("我，按钮").findOne().parent().parent().parent().parent().parent().click())
