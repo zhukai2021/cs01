@@ -1,36 +1,35 @@
-from selenium.webdriver import Chrome
-from lxml import etree
-import time
-import json
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-import re
-from bs4 import BeautifulSoup
-import csv
-from selenium.webdriver.common.keys import Keys
-import requests
-import json
-import csv
-from urllib import parse
-
-options = webdriver.ChromeOptions()
-# options.add_argument('--headless')# 无界面
-# options.add_argument('--disable-gpu')#禁用GPU
-# options.add_experimental_option('excludeSwitches', ['enable-automation'])# 设置为开发者模式
-# options.add_argument("--disable-blink-features=AutomationControlled")#防止检测
-options.add_experimental_option("debuggerAddress", "127.0.0.1:9527")
-web = webdriver.Chrome(options=options)
-headers = {
-    'User-Agent': "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Mobile Safari/537.36 Edg/98.0.1108.43"
-}
-
-
-# 点击图片上传按钮
-web.find_element(By.CLASS_NAME, 'soutu-btn').click()
-time.sleep(5)
-# 找到上传图片元素
-upload_pic_input = web.find_element(By.CLASS_NAME, 'upload-pic')
-# 直接上传
-upload_pic_input.send_keys(r'D:1/9242.PNG')
-
-time.sleep(5)
+import subprocess  
+import time  
+import os  
+  
+# 定义FFmpeg的命令  
+ffmpeg_cmd = [  
+    'ffmpeg',  
+    '-f', 'rawvideo',  
+    '-pix_fmt', 'rgb24',  
+    '-s', '640x480',  # 视频的分辨率  
+    '-r', '30',  # 帧率  
+    '-i', '-',  # 输入文件是标准输入（stdin）  
+    '-c:v', 'libx264',  # 使用H.264编码器  
+    '-c:a', 'aac',  # 使用AAC音频编码器  
+    '-b:a', '192k',  # 音频比特率  
+    '-f', 'mp4',  # 输出文件格式  
+    '-'  # 输出文件也是标准输出（stdout）  
+]  
+  
+# 定义视频的帧  
+frames = []  
+for i in range(10):  # 生成10帧  
+    data = os.urandom(640 * 480 * 3)  # 随机生成一个RGB颜色值作为像素值  
+    frames.append(data)  
+  
+# 将帧写入临时文件  
+with open('frames.raw', 'wb') as f:  
+    for frame in frames:  
+        f.write(frame)  
+  
+# 使用FFmpeg合并帧并生成视频文件  
+with open('frames.raw', 'rb') as f:  
+    with subprocess.Popen(ffmpeg_cmd, stdin=f, stderr=subprocess.PIPE) as p:  
+        p.stderr.close()  
+        time.sleep(1)  # 等待FFmpeg完成视频的生成
