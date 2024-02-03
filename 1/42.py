@@ -1,35 +1,22 @@
-import subprocess  
-import time  
-import os  
+import os
+
+# 视频文件路径
+def pic2mp4(image_path,video_path,output_path):
   
-# 定义FFmpeg的命令  
-ffmpeg_cmd = [  
-    'ffmpeg',  
-    '-f', 'rawvideo',  
-    '-pix_fmt', 'rgb24',  
-    '-s', '640x480',  # 视频的分辨率  
-    '-r', '30',  # 帧率  
-    '-i', '-',  # 输入文件是标准输入（stdin）  
-    '-c:v', 'libx264',  # 使用H.264编码器  
-    '-c:a', 'aac',  # 使用AAC音频编码器  
-    '-b:a', '192k',  # 音频比特率  
-    '-f', 'mp4',  # 输出文件格式  
-    '-'  # 输出文件也是标准输出（stdout）  
-]  
+    # 输出视频文件路径
   
-# 定义视频的帧  
-frames = []  
-for i in range(10):  # 生成10帧  
-    data = os.urandom(640 * 480 * 3)  # 随机生成一个RGB颜色值作为像素值  
-    frames.append(data)  
-  
-# 将帧写入临时文件  
-with open('frames.raw', 'wb') as f:  
-    for frame in frames:  
-        f.write(frame)  
-  
-# 使用FFmpeg合并帧并生成视频文件  
-with open('frames.raw', 'rb') as f:  
-    with subprocess.Popen(ffmpeg_cmd, stdin=f, stderr=subprocess.PIPE) as p:  
-        p.stderr.close()  
-        time.sleep(1)  # 等待FFmpeg完成视频的生成
+
+    # 构建FFmpeg命令
+    command = f'ffmpeg -i {video_path} -i {image_path} -filter_complex "overlay=10:100" {output_path}'
+
+    # 执行命令
+    os.system(command)
+
+# 视频文件路径
+out='D:/x1/2-5/2'
+xzlj='C:/Users/ly1/Downloads/24020201/'
+mp4 = "D:/x1/bg1.mp4"
+for f1 in range(1,2):
+   pic=f'{xzlj}{f1}.png'
+   print(pic,mp4,out)
+   pic2mp4(pic,mp4,out)
