@@ -1,5 +1,5 @@
 {
-	"name": "A2",
+	"name": "S1",
 	"pip": {
 		"options": ["--timeout", "1000"],
 		"install": [

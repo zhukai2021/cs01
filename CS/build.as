@@ -1,5 +1,5 @@
 {
-	"name": "A1",
+	"name": "CS",
 	"pip": {
 		"options": ["--timeout", "1000"],
 		"install": [
@@ -7,7 +7,8 @@
 			"requests",
 			"pymysql",
 			"numpy",
-			"websocket-client"
+			"websocket-client",
+			"pillow"
 		]
 	}
 }
