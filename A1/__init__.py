@@ -8,4 +8,4 @@ import time
 # 写一个循环,每3秒执行一次 ,执行100秒 
 for i in range(32):
     slide(200,1200,300,400,900)
-    time.sleep(3)
+    time.sleep(7)
