@@ -1,7 +1,7 @@
 from airscript.action import slide
 import time
 
-
+#928
 
 # 从(100,200) 滑动到 (300,400) 滑动时间为3000毫秒
 
