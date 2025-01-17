@@ -1,14 +1,6 @@
-# __init__.py 为初始化加载文件
+from ascript.android import system
 
-#导入-资源路径规划库
-from airscript.system import R
-
-#导入-节点检索库
-from airscript.node import Selector
-
-#导入-屏幕检索库
-from airscript.screen import FindColors # 找色
-from airscript.screen import CompareColors # 比色
-from airscript.screen import FindImages # 找图
-from airscript.screen import Ocr # 文字识别
-
+# 根据应用名称启动. PS:启动略慢于包名启动
+#system.open("com.mmbox.xbrowser")
+Selector().desc("主页").click().find()
+#Selector().id("input").click().find()
