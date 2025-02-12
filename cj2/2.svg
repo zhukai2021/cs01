@@ -1,0 +1,69 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- 渐变背景 -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff9e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5e1b7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景画布 -->
+  <rect width="100%" height="100%" fill="url(#bg)" rx="10" stroke="#d4af37" stroke-width="2"/>
+
+  <!-- 标题区 -->
+  <g transform="translate(300,60)">
+    <rect x="-140" y="-35" width="280" height="80" rx="15" fill="#d4af37" opacity="0.8"/>
+    <text x="0" y="0" font-family="KaiTi" font-size="36" text-anchor="middle" fill="#ffffff" dy="8">
+      悯农
+    </text>
+    <text x="0" y="30" font-family="KaiTi" font-size="18" text-anchor="middle" fill="#fff3c9">
+      〔唐〕李绅
+    </text>
+  </g>
+
+  <!-- 诗词正文 -->
+  <g font-family="KaiTi" font-size="26" fill="#4a4a4a" transform="translate(300,140)" text-anchor="middle">
+    <text x="0" y="0">锄禾日当午，</text>
+    <text x="0" y="40">汗滴禾下土。</text>
+    <text x="0" y="80">谁知盘中餐，</text>
+    <text x="0" y="120">粒粒皆辛苦。</text>
+  </g>
+
+  <!-- 内容区块模板 -->
+  <defs>
+    <g id="content-block">
+      <rect width="500" height="130" rx="10" fill="#ffffff" stroke="#d4af37" stroke-width="1"/>
+      <text font-family="KaiTi" font-size="20" fill="#d4af37" x="20" y="30">💗</text>
+      <line x1="20" x2="480" y1="40" y2="40" stroke="#d4af37" stroke-width="1"/>
+    </g>
+  </defs>
+
+  <!-- 译文区块 -->
+  <g transform="translate(50,280)">
+    <use xlink:href="#content-block"/>
+    <text font-family="SimSun" font-size="16" fill="#666" x="30" y="40">
+      <tspan x="30" dy="24">盛夏中午，烈日炎炎，农民还在劳作，汗珠滴入泥土。</tspan>
+      <tspan x="30" dy="24">有谁想到，我们碗中的米饭，每一粒都饱含着农民的辛苦。</tspan>
+    </text>
+  </g>
+
+  <!-- 注释区块 -->
+  <g transform="translate(50,430)">
+    <use xlink:href="#content-block"/>
+    <text font-family="SimSun" font-size="16" fill="#666" x="30" y="40">
+      <tspan x="30" dy="24">禾：谷类植物的统称</tspan>
+      <tspan x="30" dy="24">日当午：太阳正处在正午时刻</tspan>
+      <tspan x="30" dy="24">餐：饭</tspan>
+    </text>
+  </g>
+
+  <!-- 解析区块 -->
+  <g transform="translate(50,580)">
+    <use xlink:href="#content-block"/>
+    <text font-family="SimSun" font-size="16" fill="#666" x="30" y="40">
+      <tspan x="30" dy="24">前两句描绘农民在烈日下田间劳作的场景，"锄禾""日当午"</tspan>
+      <tspan x="30" dy="24">"汗滴"直观展现劳作艰辛。后两句以反问引发读者对粮食</tspan>
+      <tspan x="30" dy="24">来之不易的思考，表达对农民的同情和对浪费粮食的批判。</tspan>
+    </text>
+  </g>
+</svg>

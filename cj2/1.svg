@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640">
+    <style>
+        .title { font: 600 24px 'Microsoft YaHei'; fill: #2c3e50; }
+        .label { font: 500 18px 'Microsoft YaHei'; fill: #34495e; }
+        .num { font: bold 32px 'Arial'; }
+        .change-up { fill: #e74c3c; }
+        .change-down { fill: #27ae60; }
+        .note { font: 14px 'Microsoft YaHei'; fill: #7f8c8d; }
+        rect:hover { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+    </style>
+    
+    <!-- 背景渐变 -->
+    <rect width="100%" height="100%" fill="url(#grad)"/>
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#f8f9fa"/>
+            <stop offset="100%" stop-color="#ecf0f1"/>
+        </linearGradient>
+    </defs>
+
+    <!-- 标题 -->
+    <text x="50%" y="50" text-anchor="middle" class="title">📊 2024婚姻数据报告</text>
+
+    <!-- 结婚数据卡片 -->
+    <rect x="20" y="100" rx="12" width="320" height="180" fill="white"/>
+    <text x="50%" y="140" text-anchor="middle" class="label">💍 结婚登记数</text>
+    <text x="50%" y="190" text-anchor="middle" class="num">610.6
+        <tspan font-size="24">万对</tspan>
+    </text>
+    <text x="50%" y="230" text-anchor="middle" class="change-up">
+        ↓20.5% (较2023年减少157.4万对)
+    </text>
+
+    <!-- 离婚数据卡片 -->
+    <rect x="20" y="300" rx="12" width="320" height="140" fill="white"/>
+    <text x="50%" y="340" text-anchor="middle" class="label">💔 离婚登记数</text>
+    <text x="50%" y="385" text-anchor="middle" class="num">262.1
+        <tspan font-size="24">万对</tspan>
+    </text>
+    <text x="50%" y="420" text-anchor="middle" class="change-down">
+        ↑1.1% (较2023年增加2.8万对)
+    </text>
+
+    <!-- 趋势分析 -->
+    <text x="50%" y="490" text-anchor="middle" class="label">📉 婚姻登记趋势</text>
+    <path d="M50 520 L310 520" stroke="#bdc3c7" stroke-width="2"/>
+    <text x="50%" y="550" text-anchor="middle" class="note">
+        2023年结婚数曾短暂回升，2024年再次下探
+    </text>
+
+    <!-- 数据来源 -->
+    <text x="50%" y="610" text-anchor="middle" class="note">
+        数据来源：民政部 | 统计时间：2024年度
+    </text>
+</svg>
