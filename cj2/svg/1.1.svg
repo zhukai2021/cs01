@@ -1,0 +1,30 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 卡片背景 -->
+  <rect x="20" y="20" width="360" height="260" fill="#f8f0e3" stroke="#d2b48c" stroke-width="2" rx="15" ry="15"/>
+
+  <!-- 标题 -->
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="24" fill="#333">
+    春日
+  </text>
+
+  <!-- 诗词正文 -->
+  <text x="40" y="100" font-family="Arial, sans-serif" font-size="18" fill="#555">
+    春眠不觉晓，<br/>
+    处处闻啼鸟。<br/>
+    夜来风雨声，<br/>
+    花落知多少。
+  </text>
+
+  <!-- 装饰线条 -->
+  <line x1="40" y1="140" x2="340" y2="140" stroke="#d2b48c" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- 作者 -->
+  <text x="280" y="240" font-family="Arial, sans-serif" font-size="16" fill="#888" text-anchor="end">
+    —— 孟浩然
+  </text>
+
+  <!-- 花纹装饰（简单示例） -->
+  <circle cx="300" cy="200" r="10" fill="#ffcccc"/>
+  <circle cx="100" cy="230" r="8" fill="#cceeff"/>
+  <circle cx="200" cy="50" r="12" fill="#ccffcc"/>
+</svg>
