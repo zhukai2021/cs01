@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成语海报</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ebebeb; /* 莫兰迪色系背景 */
+            font-family: SimSun, serif;
+        }
+        .poster {
+            width: 400px;
+            height: 600px;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            text-align: center;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .pinyin {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .emoji-explanation {
+            margin-top: 40px;
+        }
+        .emoji {
+            font-size: 3em;
+            vertical-align: middle;
+        }
+        .explanation {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #666;
+        }
+        .translation {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #999;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .sentence {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        .ornament {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://img.alicdn.com/tfs/TB1ZQnJXkvoK1RjSZFwXXcGCFXa-20-20.png');
+            background-size: cover;
+        }
+        .ornament.bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+        .ornament.top-right {
+            top: 10px;
+            right: 10px;
+        }
+        .ornament.bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+        .download-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster" id="poster">
+        <div class="ornament"></div>
+        <div class="ornament bottom-left"></div>
+        <div class="ornament top-right"></div>
+        <div class="ornament bottom-right"></div>
+        <div class="title">灿若星辰</div>
+        <div class="pinyin"><strong>càn ruò xīng chén</strong></div>
+        <div class="emoji-explanation">
+            <span class="emoji">✨🌟💫</span>
+        </div>
+        <div class="explanation">形容众多的人或事物像星星一样明亮耀眼。</div>
+        <div class="translation">Meaning: Describing numerous people or things as bright and eye-catching like stars.</div>
+        <div class="sentence">他的笑容灿若星辰，照亮了整个房间。</div>
+    </div>
+    <button class="download-btn" onclick="downloadPoster()">下载海报</button>
+
+    <!-- 引入html2canvas库 -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function downloadPoster() {
+            html2canvas(document.getElementById('poster')).then(function(canvas) {
+                var link = document.createElement('a');
+                link.href = canvas.toDataURL();
+                link.download = '成语海报.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
