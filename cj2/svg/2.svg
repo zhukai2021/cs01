@@ -1,9 +1,10 @@
 <svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .title { font: 500 42px 'Arial'; fill: #e0e0e0 }
-    .text { font: 300 30px/1.6 'Helvetica'; fill: #f5f5f5 }
+    .title { font: 500 42px 'SimHei'; fill: #e0e0e0 }
+    .text { font: 300 30px/1.6 'SimHei'; fill: #f5f5f5 }
     .divider { stroke: #4a4a4a; stroke-width: 1 }
   </style>
+  
   
   <!-- 渐变背景 -->
   <defs>

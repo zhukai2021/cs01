@@ -1,1 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect width="400" height="600" fill="#f4f1ea" rx="15"/><rect x="10" y="10" width="380" height="580" fill="none" stroke="#d4a5a5" stroke-width="2" rx="10"/><text x="200" y="80" font-family="serif" font-size="24" text-anchor="middle" fill="#7c4b4b">古典诗词</text><path stroke="#d4a5a5" stroke-width="1.5" d="M50 90h300"/><text x="200" y="150" font-family="serif" font-size="18" text-anchor="middle" fill="#5a3e3e">春眠不觉晓，</text><text x="200" y="180" font-family="serif" font-size="18" text-anchor="middle" fill="#5a3e3e">处处闻啼鸟。</text><text x="200" y="210" font-family="serif" font-size="18" text-anchor="middle" fill="#5a3e3e">夜来风雨声，</text><text x="200" y="240" font-family="serif" font-size="18" text-anchor="middle" fill="#5a3e3e">花落知多少。</text><text x="200" y="300" font-family="serif" font-size="16" text-anchor="middle" fill="#7c4b4b">—— 孟浩然《春晓》</text><circle cx="50" cy="500" r="8" fill="#d4a5a5"/><circle cx="70" cy="510" r="8" fill="#d4a5a5"/><circle cx="90" cy="500" r="8" fill="#d4a5a5"/><circle cx="60" cy="490" r="8" fill="#d4a5a5"/><circle cx="80" cy="490" r="8" fill="#d4a5a5"/><path fill="#7c4b4b" d="M300 500l10-10 10 10zM305 510l10-10 10 10zM310 520l10-10 10 10z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(30,30,30);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(50,50,50);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1200" fill="url(#backgroundGradient)"/>
+
+  <text x="50" y="50" font-size="20" fill="gold">全球AI应用月活排行</text>
+  <text x="50" y="100" font-size="16" fill="white">2025年1月数据，仅包含应用（app），全球iOS、海外GP、以及国内安卓市场。不含网站（Web）</text>
+
+  <rect x="50" y="150" width="700" height="1" fill="gray"/>
+  <text x="50" y="170" font-size="14" fill="white">排名</text>
+  <text x="200" y="170" font-size="14" fill="white">产品名</text>
+  <text x="400" y="170" font-size="14" fill="white">国家</text>
+  <text x="600" y="170" font-size="14" fill="white">月活(万人)</text>
+
+  <rect x="50" y="200" width="700" height="50" fill="black"/>
+  <text x="50" y="230" font-size="14" fill="white">1</text>
+  <text x="200" y="230" font-size="14" fill="white">ChatGPT</text>
+  <text x="400" y="230" font-size="14" fill="white">美国</text>
+  <text x="600" y="230" font-size="14" fill="white">34,914</text>
+
+  <rect x="50" y="250" width="700" height="50" fill="black"/>
+  <text x="50" y="280" font-size="14" fill="white">2</text>
+  <text x="200" y="280" font-size="14" fill="white">豆包</text>
+  <text x="400" y="280" font-size="14" fill="white">中国</text>
+  <text x="600" y="280" font-size="14" fill="white">7,861</text>
+
+  <rect x="50" y="300" width="700" height="50" fill="black"/>
+  <text x="50" y="330" font-size="14" fill="white">3</text>
+  <text x="200" y="330" font-size="14" fill="white">Nova</text>
+  <text x="400" y="330" font-size="14" fill="white">美国</text>
+  <text x="600" y="330" font-size="14" fill="white">5,660</text>
+
+  <rect x="50" y="350" width="700" height="50" fill="black"/>
+  <text x="50" y="380" font-size="14" fill="white">4</text>
+  <text x="200" y="380" font-size="14" fill="white">DeepSeek</text>
+  <text x="400" y="380" font-size="14" fill="white">中国</text>
+  <text x="600" y="380" font-size="14" fill="white">3,370</text>
+
+  <rect x="50" y="400" width="700" height="50" fill="black"/>
+  <text x="50" y="430" font-size="14" fill="white">5</text>
+  <text x="200" y="430" font-size="14" fill="white">Talkie AI</text>
+  <text x="400" y="430" font-size="14" fill="white">中国</text>
+  <text x="600" y="430" font-size="14" fill="white">3,258</text>
+
+  <rect x="50" y="450" width="700" height="50" fill="black"/>
+  <text x="50" y="480" font-size="14" fill="white">6</text>
+  <text x="200" y="480" font-size="14" fill="white">Remini</text>
+  <text x="400" y="480" font-size="14" fill="white">意大利</text>
+  <text x="600" y="480" font-size="14" fill="white">3,177</text>
+
+  <rect x="50" y="500" width="700" height="50" fill="black"/>
+  <text x="50" y="530" font-size="14" fill="white">7</text>
+  <text x="200" y="530" font-size="14" fill="white">ChatOn</text>
+  <text x="400" y="530" font-size="14" fill="white">英国</text>
+  <text x="600" y="530" font-size="14" fill="white">2,910</text>
+
+  <rect x="50" y="550" width="700" height="50" fill="black"/>
+  <text x="50" y="580" font-size="14" fill="white">8</text>
+  <text x="200" y="580" font-size="14" fill="white">Character AI</text>
+  <text x="400" y="580" font-size="14" fill="white">美国</text>
+  <text x="600" y="580" font-size="14" fill="white">2,875</text>
+
+  <rect x="50" y="600" width="700" height="50" fill="black"/>
+  <text x="50" y="630" font-size="14" fill="white">9</text>
+  <text x="200" y="630" font-size="14" fill="white">Ask AI</text>
+  <text x="400" y="630" font-size="14" fill="white">以色列</text>
+  <text x="600" y="630" font-size="14" fill="white">2,835</text>
+
+  <rect x="50" y="650" width="700" height="50" fill="black"/>
+  <text x="50" y="680" font-size="14" fill="white">10</text>
+  <text x="200" y="680" font-size="14" fill="white">Chatbot AI</text>
+  <text x="400" y="680" font-size="14" fill="white">美国</text>
+  <text x="600" y="680" font-size="14" fill="white">2,565</text>
+
+  <rect x="50" y="700" width="700" height="50" fill="black"/>
+  <text x="50" y="730" font-size="14" fill="white">11</text>
+  <text x="200" y="730" font-size="14" fill="white">FaceApp</text>
+  <text x="400" y="730" font-size="14" fill="white">俄罗斯</text>
+  <text x="600" y="730" font-size="14" fill="white">2,535</text>
+
+  <rect x="50" y="750" width="700" height="50" fill="black"/>
+  <text x="50" y="780" font-size="14" fill="white">12</text>
+  <text x="200" y="780" font-size="14" fill="white">Hypic</text>
+  <text x="400" y="780" font-size="14" fill="white">中国</text>
+  <text x="600" y="780" font-size="14" fill="white">1,995</text>
+
+  <rect x="50" y="800" width="700" height="50" fill="black"/>
+  <text x="50" y="830" font-size="14" fill="white">13</text>
+  <text x="200" y="830" font-size="14" fill="white">Kimi 智能助手</text>
+  <text x="400" y="830" font-size="14" fill="white">中国</text>
+  <text x="600" y="830" font-size="14" fill="white">1,943</text>
+
+  <rect x="50" y="850" width="700" height="50" fill="black"/>
+  <text x="50" y="880" font-size="14" fill="white">14</text>
+  <text x="200" y="880" font-size="14" fill="white">AI Mirror</text>
+  <text x="400" y="880" font-size="14" fill="white">中国</text>
+  <text x="600" y="880" font-size="14" fill="white">1,937</text>
+
+  <rect x="50" y="900" width="700" height="50" fill="black"/>
+  <text x="50" y="930" font-size="14" fill="white">15</text>
+  <text x="200" y="930" font-size="14" fill="white">Gemini</text>
+  <text x="400" y="930" font-size="14" fill="white">美国</text>
+  <text x="600" y="930" font-size="14" fill="white">1,918</text>
+</svg>
